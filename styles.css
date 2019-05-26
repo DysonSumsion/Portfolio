@@ -69,21 +69,19 @@ body, html {
     font-style: italic;
 }
 .socials {
-    position: absolute;
-    top: 800%;
-    width: 100%;
+   padding: 20px
 }
 
-.border2 {
-  position: relative;
-  top: 100%;
 
+.border2 {
+  text-align: center
 }
 
 .ptext .border {
     background-color: #111111;
     color: #ffffff;
     padding: 20px;
+    margin: 0px;
 }
 
 .ptext .border.trans {
@@ -95,6 +93,20 @@ body, html {
         background-attachment: scroll;
     }
 }
+
+@media(max-width:774px){
+  .ptext {
+    font-size: 20px
+  }
+}
+
+@media(max-width:638px){
+  .ptext {
+    font-size: 12px
+  }
+}
+
+
 
 
 
