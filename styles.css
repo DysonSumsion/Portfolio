@@ -8,7 +8,7 @@ body, html {
   color: #333333;
 }
 
-.pimg1, .pimg2, .pimg3, .pimg4 {
+.pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
   position: relative;
   opacity: 0.70;
   background-position: center;
@@ -75,11 +75,6 @@ body, html {
  padding: 20px
 }
 
-.skills {
-  text-align: center;
-}
-
-
 .border2 {
 text-align: center
 }
@@ -96,7 +91,7 @@ text-align: center
 }
 
 @media(max-width:568px){
-  .pimg1, .pimg2, .pimg3, .pimg4 {
+  .pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
       background-attachment: scroll;
   }
 }
@@ -115,24 +110,3 @@ text-align: center
 
 
 
-
-
-/* .bg1::after {
-    background-image: url("rafael-de-nadai-588387-unsplash.jpg");
-    background-position-y: 35%
-  }
-  
-  .bg2::after {
-    background-image: url("matthew-ronder-seid-424703-unsplash.jpg");
-  }
-  
-  .bg3::after {
-    background-image: url("philippe-mignot-127665-unsplash.jpg");
-  }
-  
-  .bg4::after {
-    background-image: url("john-gibbons-311400-unsplash.jpg")
-  }
-  
-  .bg5::after {
-    background-image: url("mahkeo-253875-unsplash.jpg") */
