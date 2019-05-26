@@ -1,76 +1,97 @@
-/* Tiny reset thingy */
-* {
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-  box-sizing: border-box;
+body, html {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: #333333;
 }
 
-.wrapper {
-/* The height needs to be set to a fixed value for the effect to work.
- * 100vh is the full height of the viewport. */
-height: 100vh;
-/* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
-overflow-x: hidden;
-/* Enable scrolling on the page. */
-overflow-y: auto;
-/* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
-perspective: 2px;
+.pimg1, .pimg2, .pimg3, .pimg4 {
+  position: relative;
+  opacity: 0.70;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*  fixed = parallax
+      scroll = normal */
+  background-attachment: fixed;
+}
+
+.pimg1 {
+  background-image: url('./background-images/rafael-de-nadai-588387-unsplash.jpg');
+  min-height: 100%;
+  /* background-position-y: 75%; */
+}
+
+.pimg2 {
+  background-image: url('./background-images/matthew-ronder-seid-424703-unsplash.jpg');
+  min-height: 400px
+}
+
+.pimg3 {
+  background-image: url('./background-images/philippe-mignot-127665-unsplash.jpg');
+  min-height: 400px
+}
+
+.pimg4 {
+  background-image: url('./background-images/john-gibbons-311400-unsplash.jpg');
+  min-height: 400px
 }
 
 .section {
-/* Needed for children to be absolutely positioned relative to the parent. */
-position: relative;
-/* The height of the container. Must be set, but it doesn't really matter what the value is. */
-height: 100%;
-/* For text formatting. */
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-color: white;
-text-shadow: 0 0 5px #000;
+  text-align: center;
+  padding: 50px 80px;
 }
 
-.parallax::after {
-/* Display and position the pseudo-element */
-content: " ";
-position: absolute;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-
-/* Move the pseudo-element back away from the camera,
- * then scale it back up to fill the viewport.
- * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
-transform: translateZ(-1px) scale(1.5);
-/* Force the background image to fill the whole element. */
-background-size: 100%;
-/* Keep the image from overlapping sibling elements. */ 
-z-index: -1;
+.section-light {
+  background-color: #f4f4f4;
+  color: #333333
 }
 
-/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
-/* @media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
+.section-dark {
+  background-color: #282e34;
+  color: #dddddd;
+}
+
+.ptext {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+}
+.socials {
+  position: absolute;
+  top: 800%;
+  width: 100%
+}
+
+.ptext .border {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.ptext .border.trans {
+  background-color: transparent;
+}
+
+@media(max-width:568px){
+  .pimg1, .pimg2, .pimg3 {
+      background-attachment: scroll;
   }
-} */
-
-/* The styling for the static div. */
-.static {
-  background: #333333;
-  margin: 50px;
 }
 
-.static2 {
-  background: #333333;
-  margin: 50px;
-}
 
-/* Sets the actual background images */
-.bg1::after {
+
+/* .bg1::after {
   background-image: url("rafael-de-nadai-588387-unsplash.jpg");
   background-position-y: 35%
 }
@@ -80,190 +101,12 @@ z-index: -1;
 }
 
 .bg3::after {
-  background-image: url("aaron-burson-242124-unsplash\ copy.jpg");
+  background-image: url("philippe-mignot-127665-unsplash.jpg");
 }
 
-
-
-.name {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  color: white;
-  font-size: 60px;
-  text-shadow: 0px 4px 20px rgba(0, 0, 0, 1);
+.bg4::after {
+  background-image: url("john-gibbons-311400-unsplash.jpg")
 }
 
-.description {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  color: white;
-  font-size: 40px;
-  text-shadow: 0px 4px 20px rgba(0, 0, 0, 1);
-}
-
-
-.socials {
-  display: flex;
-  flex-direction: row;
-  width: 75%;
-  justify-content: space-evenly;
-  padding: 50px
-}
-
-.about-me-title {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  color: white;  
-  font-size: 40px;
-  display: flex;
-  align-self: flex-start;
-  padding: 50px;
-  position: absolute;
-  top: 0px;
-  left: 25px;
-  text-shadow: 0px 4px 20px rgba(0, 0, 0, 1);
-}
-
-.about-me-info {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 20px;
-  color: white;
-  display: flex;
-  align-self: flex-start;
-  position: absolute;
-  padding: 50px;
-  top: 120px;
-  left: 90px;
-  border-left: 2px solid white
-}
-
-
-
-
-
-
-
-/* .initials {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  color: white;
-  margin: 25px;
-  padding: 25px;
-  position: fixed;
-  top: 0;
-  font-size: 40px
-}
-
-.initials:hover {
-  color: #B84200
-} */
-
-
-
-
-/* .twitter {
-  width:60px; 
-  height: 60px; 
-  border-radius: 90px;
-  position: fixed;
-  bottom: 37.5px;
-  right: 275px
-} */
-
-/* .linkedin {
-  width:60px; 
-  height: 60px; 
-  border-radius: 90px;
-  position: fixed;
-  bottom: 37.5px;
-  right: 175px
-} */
-
-/* .github {
-  width:60px; 
-  height: 60px; 
-  border-radius: 90px;
-  position: fixed;
-  bottom: 37.5px;
-  right: 75px
-} */
-
-
-
-
-
-
-
-/* .page-number1 {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  color: white;
-  margin: 25px;
-  padding: 25px;
-  position: fixed;
-  Bottom: -7.5px;
-  left: 0px;
-  font-size: 40px
-}
-
-.page-number1:hover {
-  color: #B84200
-}
-
-.page-number2 {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  color: white;
-  margin: 25px;
-  padding: 25px;
-  position: fixed;
-  Bottom: -7.5px;
-  left: 80px;
-  font-size: 40px;
-}
-
-.page-number2:hover {
-  color: #B84200
-}
-
-.page-number3 {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  color: white;
-  margin: 25px;
-  padding: 25px;
-  position: fixed;
-  Bottom: -7.5px;
-  left: 160px;
-  font-size: 40px;
-}
-
-.page-number3:hover {
-  color: #B84200
-}
-
-.page-number4 {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  color: white;
-  margin: 25px;
-  padding: 25px;
-  position: fixed;
-  Bottom: -7.5px;
-  left: 240px;
-  font-size: 40px;
-}
-
-.page-number4:hover {
-  color: #B84200
-} */
+.bg5::after {
+  background-image: url("mahkeo-253875-unsplash.jpg") */
