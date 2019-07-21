@@ -1,6 +1,6 @@
 # Portfolio - Dyson Sumsion
 
-### Link to site: https://determined-fermi-ab0457.netlify.com/
+### Link to site: https://dyson-sumsion.netlify.com/
 
 ### Link to Github: https://github.com/DysonSumsion/Portfolio
 
